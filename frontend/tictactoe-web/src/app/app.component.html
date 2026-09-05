@@ -1,0 +1,100 @@
+<div class="shell">
+  <header>
+    <div>
+      <h1>Tic Tac Toe</h1>
+      <p>Angular + .NET REST API</p>
+    </div>
+
+    <div class="mode">
+      <label>Game mode</label>
+      <select [(ngModel)]="mode" (change)="newGame()">
+        <option [ngValue]="0">Two Player</option>
+        <option [ngValue]="1">Play Against Computer</option>
+      </select>
+    </div>
+  </header>
+
+  <main>
+    <section class="card game">
+      <div class="status">{{statusText()}}</div>
+
+      <div class="board">
+        <button
+          *ngFor="let i of cells"
+          class="cell"
+          [class.winner]="isWinning(i)"
+          [disabled]="loading || !game || game.status !== 0"
+          (click)="play(i)">
+          {{label(value(i))}}
+        </button>
+      </div>
+
+      <div class="actions">
+        <button
+          (click)="undo()"
+          [disabled]="loading || !game || game.moveHistory.length === 0 || game.status !== 0">
+          Undo Last Move
+        </button>
+
+        <button
+          (click)="resetGame()"
+          [disabled]="loading || !game">
+          Reset Game
+        </button>
+      </div>
+
+      <div class="error" *ngIf="error">
+        {{error}}
+      </div>
+    </section>
+
+    <aside>
+      <section class="card">
+        <h2>Scoreboard</h2>
+
+        <div class="scores">
+          <div>
+            <b>{{scoreboard.xWins}}</b>
+            <span>X Wins</span>
+          </div>
+
+          <div>
+            <b>{{scoreboard.oWins}}</b>
+            <span>O Wins</span>
+          </div>
+
+          <div>
+            <b>{{scoreboard.draws}}</b>
+            <span>Draws</span>
+          </div>
+        </div>
+
+        <button
+          class="secondary"
+          (click)="resetScoreboard()">
+          Reset Scoreboard
+        </button>
+      </section>
+
+      <section class="card">
+        <h2>Move History</h2>
+
+        <p
+          *ngIf="!game?.moveHistory?.length"
+          class="muted">
+          No moves yet.
+        </p>
+
+        <ol>
+          <li *ngFor="let m of game?.moveHistory">
+            <span>Move {{m.moveNumber}}</span>
+            <b>{{label(m.player)}}</b>
+            <span>
+              Row {{m.row + 1}}, Column {{m.column + 1}}
+            </span>
+          </li>
+        </ol>
+      </section>
+    </aside>
+  </main>
+</div>

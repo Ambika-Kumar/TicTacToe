@@ -1,7 +1,5 @@
-**/bin/
-**/obj/
-**/node_modules/
-.angular/
-.vscode/
-*.user
-*.suo
+# Angular build output
+frontend/tictactoe-web/dist/
+
+# Node dependencies
+node_modules/

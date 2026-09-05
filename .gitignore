@@ -1,5 +1,18 @@
-# Angular build output
-frontend/tictactoe-web/dist/
-
 # Node dependencies
 node_modules/
+
+# Angular build output
+dist/
+.angular/
+
+# .NET build output
+bin/
+obj/
+
+# Visual Studio / VS Code
+.vs/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db

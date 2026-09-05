@@ -319,75 +319,32 @@ These limitations are acceptable for the scope of this exercise.
 
 # AI-Assisted Development / Prompt Summary
 
-AI tools were used as a development assistant during implementation, review, testing, troubleshooting, and documentation.
+AI was used selectively during development for requirement clarification, troubleshooting, code review, testing discussions, architectural discussions, and documentation.
 
-The following are examples of the prompts used during development.
+## Representative Prompts
 
-## Requirement Analysis
+Examples of prompts used during development included:
 
-- "Break down the Tic Tac Toe requirements into frontend, backend, API, and testing tasks."
-- "Review the requirements and identify all functional scenarios that need to be implemented and tested."
-
-## Backend Development
-
-- "Help design the .NET REST API for a Tic Tac Toe application."
-- "Review the game logic and make sure the backend validates moves, turns, wins, draws, and completed games correctly."
-- "Check the implementation for invalid moves, including selecting an already occupied cell."
-
-## Computer Mode
-
-- "Implement the computer move logic using this priority: win if possible, block the opponent, take center, take a corner, then take any available cell."
-- "Review the computer mode and make sure the computer does not make a move after the game is completed."
-
-## Frontend
-
-- "Review the Angular Tic Tac Toe UI and make sure the board, current status, move history, scoreboard, buttons, and error messages are displayed correctly."
-- "Fix the Angular UI so that an invalid move displays the backend error message to the user."
-
-## Undo
-
-- "Review the Undo requirements for both Two Player Mode and Computer Mode."
-- "In Computer Mode, Undo should remove the computer's last move and the human player's previous move together. Verify that the game returns to X's turn."
-
-## Testing
-
-- "Create a test plan covering valid moves, invalid moves, wins, draws, undo, reset, scoreboard, and computer mode."
-- "Review the existing .NET tests and identify any missing scenarios."
-- "Help troubleshoot failing tests and verify that the final test suite covers the required behavior."
-
-## Troubleshooting
-
-- "The Angular application is running locally but the expected error message is not displayed. Help identify whether the issue is in the frontend, API response handling, or template."
-- "Review the project structure and help identify where the Angular component and template code should be updated."
-
-## Documentation
-
-- "Review the README against the assignment requirements and identify any missing documentation."
-- "Create a clear README containing project overview, technology stack, features, setup instructions, test instructions, API endpoint summary, AI workflow, assumptions, limitations, and future improvements."
-
-## Final Review
-
-- "Review the complete Tic Tac Toe implementation against the original requirements and identify any gaps before submission."
+- "Review these Tic Tac Toe requirements and help me identify any scenarios I may have missed."
+- "Check the Undo behavior in Computer Mode and confirm whether both the computer and previous human move should be removed."
+- "Review the current game flow and suggest test scenarios for win, draw, invalid move, and reset."
+- "Help me understand why this .NET API request is returning an error."
+- "Explain how the in-memory game state is maintained between API requests."
+- "Review the current API endpoints and suggest whether the responsibilities are clearly separated."
+- "Review the README and check whether all assignment submission requirements are covered."
+- "Explain the architectural trade-offs between in-memory storage and using a database."
 
 ## AI Workflow
 
-The general workflow followed during development was:
+The general approach was:
 
-1. Understand and break down the requirements.
-2. Design the frontend and backend structure.
-3. Implement the .NET API and game rules.
-4. Implement the Angular UI.
-5. Add validation and error handling.
-6. Implement Computer Mode.
-7. Implement Undo and scoreboard behavior.
-8. Create and review automated tests.
-9. Run the application locally and manually verify the main scenarios.
-10. Review the implementation against the requirements.
-11. Update the README and prepare the GitHub submission.
+1. Understand the assignment requirements.
+2. Design and implement the application.
+3. Use AI selectively when clarification or troubleshooting was needed.
+4. Test the implementation against the requirements.
+5. Review and refine the final implementation and documentation.
 
-AI suggestions were reviewed against the actual requirements and tested in the application.
-
-The final implementation was manually verified for the main game scenarios and the backend test suite was run successfully.
+AI suggestions were reviewed and validated before being incorporated into the project.
 
 # Future Improvements
 
